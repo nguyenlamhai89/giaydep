@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <input type="text" name="" value="{{ shoes.name }}">
+  <br>
+  <img src="{{ shoes.image }}" alt="{{ shoes.name }}">
+  <br>
+  <input type="text" name="" value="{{ shoes.masp }}">
+  <br>
+  <input type="text" name="" value="{{ shoes.price }}">
+  <button type="submit" name="button">Update</button>
+</div>
+{% endblock %}

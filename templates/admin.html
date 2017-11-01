@@ -1,38 +1,152 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Free Gifts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </head>
+  <body oncontextmenu="return false">
+    <button type="button" class = "btn btn-danger float-right mr-5 mb-2" name="button"><a class="text-white" href="/">Back to Menu</a></button>
+    <br>
+    <div class="container">
+      <h3 class ="text-center text-danger mb-3">Multiple Choices</h3>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Questions</th>
+            <th>Answer A</th>
+            <th>Answer B</th>
+            <th>Answer C</th>
+            <th>Answer D</th>
+            <th>Correct Answer</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for quest in questions %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ quest.question}}</td>
+            <td>{{ quest.answerA }}</td>
+            <td>{{ quest.answerB }}</td>
+            <td>{{ quest.answerC }}</td>
+            <td>{{ quest.answerD }}</td>
+            <td>{{ quest.correct_answer }}</td>
+            <td>
+                <a href="/edit_mp/{{quest.id}}">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 
-{% block page_content %}
-<div class="container">
-  <table class="table table-striped table-inverse">
-    <thead class="thead-default">
-      <tr>
-        <th>STT</th>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Product code</th>
-        <th>Price</th>
-        <th>Option</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for shoes in shoeslist %}
-      <tr>
-          <td>{{ loop.index }}</td>
-          <td><a target="_blank" href="{{ shoes.image }}">Click here</a></td>
-          <td>{{ shoes.name }}</td>
-          <td>{{ shoes.masp }}</td>
-          <td>{{ shoes.price }}</td>
-          <td>
-            <a href="">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            </a>
 
-            <a href="/deleteshoes/{{ shoes.id }}">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
-          </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-{% endblock %}
+    <div class="container">
+      <h3 class ="text-center text-danger mb-3">Stress</h3>
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Answer A</th>
+            <th>Answer B</th>
+            <th>Answer C</th>
+            <th>Answer D</th>
+            <th>Correct Answer</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for str in stress %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ str.answerA }}</td>
+            <td>{{ str.answerB }}</td>
+            <td>{{ str.answerC }}</td>
+            <td>{{ str.answerD }}</td>
+            <td >{{ str.correct_answer }}</td>
+            <td>
+                <a href="/edit_stress/{{str.id}}">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+
+        <div class="container">
+          <h3 class ="text-center text-danger mb-3">Vocabulary</h3>
+          <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Word</th>
+                <th>Word A</th>
+                <th>Word B</th>
+                <th>Word C</th>
+                <th>Word D</th>
+                <th >Correct Word</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for voc in vocab %}
+              <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ voc.word}}</td>
+                <td>{{ voc.wordA }}</td>
+                <td>{{ voc.wordB }}</td>
+                <td>{{ voc.wordC }}</td>
+                <td>{{ voc.wordD }}</td>
+                <td >{{ voc.correct_word }}</td>
+                <td>
+                    <a href="/edit_vocab/{{voc.id}}">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="container">
+          <table class="table table-inverse">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>GIFT</th>
+                <th>NAME</th>
+                <th>EDIT</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for gift in gifts%}
+              <tr>
+                <td>{{loop.index}}</td>
+                <td><a href="{{gift.gift}}">Picture</a></td>
+                <td>{{gift.gift_name}}</td>
+                <td>
+                    <a href="">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+  <h6 class="float-right text-white"> Copyright (c) Cadeaux</h6>
+  </body>
+</html>

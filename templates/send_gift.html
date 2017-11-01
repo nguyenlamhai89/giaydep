@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <h2 class = "text-center text-danger">CONGRATULATION!!!!!!!</h2>
+  <h4 class = "text-center">We would like to present you the following gift which is a:</h4>
+  <form class="" action="/send_gift/{{user_gift.id}}" enctype="multipart/form-data" method="post">
+    <div class="form-control">
+<<<<<<< HEAD
+      <label for="" class= "d-block">Please enter your email:</label>
+      <input type="text" name="email" value="" class= "form-control">
+=======
+      <div class="text-center">
+        <img src="{{user_gift.gift}}" align = "middle" class = "hellobaby img-fluid" alt="">
+      </div>
+      <h2 class = "text-center text-danger">A {{user_gift.gift_name}}!!!!!!!</h2>
+      <label for="" class= "d-block">Please enter your email or your friend's email:</label>
+      <input type="text" name="email" value="" class= "form-control">
+      <label for="" class= "d-block">If you want to send it to a friend then what do you have to say: </label>
+      <input type="text" name="wish" value="" class= "form-control">
+>>>>>>> dca4ccebd83d36084f8d98933dd8782265555a4d
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Send</button>
+  </form>
+
+
+</div>
+
+
+{% endblock %}

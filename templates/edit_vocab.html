@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <form class="" action="/edit_vocab/{{vocab_edit.id}}"  enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <label for="" class= "d-block">Word</label>
+      <textarea name="question" rows="5" cols="60" class = "form-control">{{vocab_edit.question}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Word A</label>
+      <input type="text" name="wordA" value="{{vocab_edit.wordA}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Word B</label>
+      <input type="text" name="wordB" value="{{vocab_edit.wordB}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Word C</label>
+      <input type="text" name="wordC" value="{{vocab_edit.wordC}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Word D</label>
+      <input type="text" name="wordD" value="{{vocab_edit.wordD}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Correct Word</label>
+      <input type="text" name="correct_word" value="{{vocab_edit.correct_word}}" class = "form-control">
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <form class="" action="/edit_mp/{{question_edit.id}}"  enctype="multipart/form-data" method="post">
+    <div class="form-group">
+      <label for="" class= "d-block">Question</label>
+      <textarea name="question" rows="5" cols="60" class = "form-control">{{question_edit.question}}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer A</label>
+      <input type="text" name="answerA" value="{{question_edit.answerA}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer B</label>
+      <input type="text" name="answerB" value="{{question_edit.answerB}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer C</label>
+      <input type="text" name="answerC" value="{{question_edit.answerC}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Answer D</label>
+      <input type="text" name="answerD" value="{{question_edit.answerD}}" class = "form-control">
+    </div>
+    <div class="form-group">
+      <label for="" class= "d-block">Correct Answer</label>
+      <input type="text" name="correct_answer" value="{{question_edit.correct_answer}}" class = "form-control">
+    </div>
+    <button type="submit" class = "form-control btn btn-danger" name="button">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

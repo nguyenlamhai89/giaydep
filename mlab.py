@@ -1,13 +1,12 @@
 import mongoengine
 
-#mongodb://<dbuser>:<dbpassword>@ds159208.mlab.com:59208/a-task
-#v2:
-#mongodb://<dbuser>:<dbpassword>@ds135519.mlab.com:35519/a-task-v2
-host = "ds163034.mlab.com"
-port = 63034
-db_name = "giaydep"
-user_name = "admin"
-password = "admin"
+#mongodb://<dbuser>:<dbpassword>@ds151024.mlab.com:51024/cuagaidaicuong
+
+host = "ds133044.mlab.com"
+port = 33044
+db_name = "freegifts"
+user_name = "hello"
+password = "banhbao"
 
 
 def connect():
