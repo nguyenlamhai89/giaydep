@@ -19,6 +19,7 @@ mock
 # Production Server
 # ----------------------
 gevent
+eventlet
 gunicorn
 mongoengine
 
@@ -26,4 +27,3 @@ mongoengine
 # Other
 # ----------------------
 youtube-dl
-flake8
