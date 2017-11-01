@@ -27,3 +27,5 @@ mongoengine
 # Other
 # ----------------------
 youtube-dl
+
+faker
